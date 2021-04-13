@@ -48,8 +48,7 @@ namespace Exercio2_v2.Modelagem
         {
             try
             {
-                Contato x = _contatos.Find(m => m.Nome == nome);
-                _contatos.Remove(x);
+                _contatos.Remove(_contatos.Find(m => m.Nome == nome));
             }
             catch
             {
