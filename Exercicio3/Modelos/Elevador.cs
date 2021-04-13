@@ -10,17 +10,17 @@ namespace Exercicio3.Modelos
         private int CapacidadeElevador;
         private int NumPessoasPresentes;
 
-        public Elevador(int totalAndares, int capacidadeElvador)
+        public Elevador(int totalAndares, int capacidadeElevador)
         {
             TotalAndares = totalAndares;
-            CapacidadeElevador = capacidadeElvador;
+            CapacidadeElevador = capacidadeElevador;
             AndarAtual = 0;
             NumPessoasPresentes = 0;
         }
 
         public void Descer()
         {
-            if(AndarAtual < 0)
+            if(AndarAtual == 0)
             {
                 Console.WriteLine("Não é possível descer mais pois já é o térreo");
             }
@@ -32,7 +32,7 @@ namespace Exercicio3.Modelos
 
         public void Entrar()
         {
-            if(NumPessoasPresentes > CapacidadeElevador)
+            if(NumPessoasPresentes == CapacidadeElevador)
             {
                 Console.WriteLine("Elevador cheio demais");
             }
@@ -45,7 +45,7 @@ namespace Exercicio3.Modelos
 
         public void Sair()
         {
-            if(NumPessoasPresentes < 0)
+            if(NumPessoasPresentes == 0)
             {
                 Console.WriteLine("Não há nenhuma pessoa para sair");
             }
@@ -58,7 +58,7 @@ namespace Exercicio3.Modelos
 
         public void Subir()
         {
-            if(AndarAtual > TotalAndares)
+            if(AndarAtual == TotalAndares)
             {
                 Console.WriteLine("Não é possível subir mais");
             }
@@ -71,6 +71,11 @@ namespace Exercicio3.Modelos
         public void MostrarNumAtualOcupantes()
         {
             Console.WriteLine("O número de ocupantes atual do elevador é: " + NumPessoasPresentes);
+        }
+
+        public void MostrarAndarAtual()
+        {
+            Console.WriteLine("O andar atual do elevador é: " + AndarAtual);
         }
     }
 }
